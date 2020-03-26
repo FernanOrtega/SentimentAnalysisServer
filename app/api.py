@@ -4,7 +4,7 @@ from typing import Union
 from flask import Flask, request, Response
 from werkzeug.exceptions import HTTPException, InternalServerError
 
-from sentimentanalysis import SentimentAnalysis
+from sentileak import SentiLeak
 
 
 def get_response(body: Union[str, dict], status: int = 200):
@@ -14,7 +14,7 @@ def get_response(body: Union[str, dict], status: int = 200):
 
 
 application = Flask(__name__)
-sent_analysis = SentimentAnalysis()
+sent_analysis = SentiLeak()
 
 
 @application.errorhandler(Exception)
